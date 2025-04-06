@@ -5,17 +5,13 @@ export const navigation = [
     icon: 'home'
   },
   {
-    text: 'Examples',
-    icon: 'folder',
-    items: [
-      {
-        text: 'Profile',
-        path: '/profile'
-      },
-      {
-        text: 'Tasks',
-        path: '/tasks'
-      }
-    ]
+    text: 'Web IFC Viewer',
+    path: '/web-ifc-viewer',
+    icon: 'home'
+  },
+  {
+    text: 'Tasks',
+    path: '/tasks',
+    icon: 'home'
   }
 ];

@@ -8,10 +8,12 @@ import { FooterModule, ResetPasswordFormModule, CreateAccountFormModule, ChangeP
 import { AuthService, ScreenService, AppInfoService } from './shared/services';
 import { UnauthenticatedContentModule } from './unauthenticated-content';
 import { AppRoutingModule } from './app-routing.module';
+import { WebIfcViewerComponent } from './pages/web-ifc-viewer/web-ifc-viewer.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    WebIfcViewerComponent
   ],
   imports: [
     BrowserModule,
