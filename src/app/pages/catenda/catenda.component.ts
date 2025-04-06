@@ -16,7 +16,7 @@ export class CatendaComponent implements OnInit {
 
   private onViewer3dLoad() {
     const projectId = "79d3bb6f8fbe49739311d80bd691e81b";
-    const token = "5d32595610c44bb5b3e987db5a854bdd";
+    const token = "53194743d0cd48b0a5c17a1f1b36af0e";
 
     const tokenUrl = `https://api.catenda.com/v2/projects/${projectId}/viewer3d/data?token=${token}`;
 
