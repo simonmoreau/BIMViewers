@@ -35,7 +35,6 @@ yarn-error.log
 /coverage
 /libpeerconnection.log
 testem.log
-src/devextreme-license.ts
 /typings
 
 # System files
