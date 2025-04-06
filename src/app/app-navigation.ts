@@ -10,8 +10,8 @@ export const navigation = [
     icon: 'home'
   },
   {
-    text: 'Tasks',
-    path: '/tasks',
+    text: 'Catenda',
+    path: '/catenda',
     icon: 'home'
   }
 ];
