@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import * as BUI from "@thatopen/components/";
 
 @Component({
   selector: 'app-web-ifc-viewer',
