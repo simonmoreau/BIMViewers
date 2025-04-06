@@ -9,7 +9,7 @@ import * as THREE from 'three';
   styleUrl: './web-ifc-viewer.component.scss',
 })
 export class WebIfcViewerComponent implements OnInit {
-  ngOnInit(): void {
+  async ngOnInit() {
     const container = document.getElementById('container')!;
     const components = new OBC.Components();
     const worlds = components.get(OBC.Worlds);
@@ -27,9 +27,17 @@ export class WebIfcViewerComponent implements OnInit {
     components.init();
     world.scene.setup();
 
-    const material = new THREE.MeshLambertMaterial({ color: "#6528D7" });
-    const geometry = new THREE.BoxGeometry();
-    const cube = new THREE.Mesh(geometry, material);
-    world.scene.three.add(cube);
+    await this.loadIfc(components, world);
+  }
+
+  private async loadIfc(components: OBC.Components, world: OBC.SimpleWorld<OBC.SimpleScene, OBC.SimpleCamera, OBC.SimpleRenderer>) {
+    const fragments = new OBC.FragmentsManager(components);
+    const fragFile = await fetch(
+      "https://thatopen.github.io/engine_components/resources/small.frag",
+    );
+    const data = await fragFile.arrayBuffer();
+    const buffer = new Uint8Array(data);
+    const model = fragments.load(buffer);
+    world.scene.three.add(model);
   }
 }
