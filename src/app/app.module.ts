@@ -10,12 +10,14 @@ import { UnauthenticatedContentModule } from './unauthenticated-content';
 import { AppRoutingModule } from './app-routing.module';
 import { WebIfcViewerComponent } from './pages/web-ifc-viewer/web-ifc-viewer.component';
 import { CatendaComponent } from './pages/catenda/catenda.component';
+import { AutodeskComponent } from './pages/autodesk/autodesk.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     WebIfcViewerComponent,
-    CatendaComponent
+    CatendaComponent,
+    AutodeskComponent
   ],
   imports: [
     BrowserModule,
