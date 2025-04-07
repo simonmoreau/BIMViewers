@@ -26,7 +26,9 @@ namespace bimviewers_api
         [Function("Autodesk")]
         public async Task<IActionResult> Run([HttpTrigger(AuthorizationLevel.Anonymous, "get", "post")] HttpRequest req)
         {
-            TwoLeggedToken twoLeggedToken = await _authenticationClient.GetTwoLeggedTokenAsync(_settings.Forge.ClientId, _settings.Forge.ClientSecret, new List<Scopes> { Scopes.BucketCreate });
+            TwoLeggedToken twoLeggedToken = await _authenticationClient.GetTwoLeggedTokenAsync(
+                _settings.ForgeClientId, _settings.ForgeClientSecret, 
+                new List<Scopes> { Scopes.BucketCreate });
 
 
             _logger.LogInformation("C# HTTP trigger function processed a request.");

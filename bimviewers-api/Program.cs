@@ -16,7 +16,7 @@ builder.Configuration.AddJsonFile("local.settings.json", optional: true, reloadO
 
 
 // Load settings
-builder.Services.Configure<AppSettings>(builder.Configuration.GetSection("AppSettings"));
+builder.Services.Configure<AppSettings>(builder.Configuration.GetSection("Values"));
 
 // Application Insights isn't enabled by default. See https://aka.ms/AAt8mw4.
 // builder.Services
