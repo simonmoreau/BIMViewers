@@ -13,5 +13,10 @@ export const navigation = [
     text: 'Catenda',
     path: '/catenda',
     icon: 'home'
+  },
+  {
+    text: 'Autodesk',
+    path: '/autodesk',
+    icon: 'home'
   }
 ];

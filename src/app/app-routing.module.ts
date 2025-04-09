@@ -8,6 +8,7 @@ import { WebIfcViewerComponent } from './pages/web-ifc-viewer/web-ifc-viewer.com
 import { CatendaComponent } from './pages/catenda/catenda.component';
 import { TasksComponent } from './pages/tasks/tasks.component';
 import { DxDataGridModule, DxFormModule } from 'devextreme-angular';
+import { AutodeskComponent } from './pages/autodesk/autodesk.component';
 
 const routes: Routes = [
   {
@@ -28,6 +29,11 @@ const routes: Routes = [
   {
     path: 'catenda',
     component: CatendaComponent,
+    canActivate: [ AuthGuardService ]
+  },
+  {
+    path: 'autodesk',
+    component: AutodeskComponent,
     canActivate: [ AuthGuardService ]
   },
   {
