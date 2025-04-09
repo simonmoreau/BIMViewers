@@ -1,4 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { HttpService } from '../../shared/services/http.service';
 
 @Component({
   selector: 'app-autodesk',
@@ -8,8 +9,10 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 })
 export class AutodeskComponent implements OnInit, OnDestroy {
   viewer: Autodesk.Viewing.GuiViewer3D | null;
-
-  constructor() {
+  private httpService: HttpService;
+  
+  constructor(httpService: HttpService) {
+    this.httpService = httpService;
     this.viewer = null;
   }
 
@@ -20,6 +23,11 @@ export class AutodeskComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
+
+    this.httpService.get('https://func-bim42-prod-fr-bimviewers.azurewebsites.net/api/Autodesk').subscribe(response => {
+      console.log(response);
+    });
+
     var options = {
       env: 'AutodeskProduction2',
       api: 'streamingV2_EU', // for models uploaded to EMEA change this option to 'streamingV2_EU'

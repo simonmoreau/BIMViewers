@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { provideHttpClient } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { DxHttpModule } from 'devextreme-angular/http';
@@ -31,9 +32,10 @@ import { AutodeskComponent } from './pages/autodesk/autodesk.component';
     ChangePasswordFormModule,
     LoginFormModule,
     UnauthenticatedContentModule,
-    AppRoutingModule
+    AppRoutingModule 
   ],
   providers: [
+    provideHttpClient(),
     AuthService,
     ScreenService,
     AppInfoService
