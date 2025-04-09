@@ -63,6 +63,7 @@ Based on Azure functions
 To deploy it :
 
 ```bash
+cd .\bimviewers-api\ 
 func azure functionapp publish func-bim42-prod-fr-bimviewers
 ```
 
