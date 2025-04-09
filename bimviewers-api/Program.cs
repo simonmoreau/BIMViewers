@@ -10,14 +10,6 @@ var builder = FunctionsApplication.CreateBuilder(args);
 
 builder.ConfigureFunctionsWebApplication();
 
-
-// Explicitly load local.settings.json
-builder.Configuration.AddJsonFile("local.settings.json", optional: true, reloadOnChange: true);
-
-
-// Load settings
-builder.Services.Configure<AppSettings>(builder.Configuration.GetSection("Values"));
-
 // Application Insights isn't enabled by default. See https://aka.ms/AAt8mw4.
 // builder.Services
 //     .AddApplicationInsightsTelemetryWorkerService()
