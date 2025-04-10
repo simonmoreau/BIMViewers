@@ -23,7 +23,7 @@ namespace bimviewers_api
     }
 
     [Function("Autodesk")]
-    public async Task<IActionResult> Run([HttpTrigger(AuthorizationLevel.Anonymous, "get", "post")] HttpRequest req)
+    public async Task<IActionResult> Run([HttpTrigger(AuthorizationLevel.Anonymous, "get")] HttpRequest req)
     {
 
       _logger.LogInformation("C# HTTP trigger function processed a request.");
@@ -33,7 +33,7 @@ namespace bimviewers_api
 
       TwoLeggedToken twoLeggedToken = await _authenticationClient.GetTwoLeggedTokenAsync(
           clientID, clientSecret,
-          new List<Scopes> { Scopes.DataRead });
+          new List<Scopes> { Scopes.DataRead, Scopes.DataWrite, Scopes.ViewablesRead });
 
       // code:all data:write data:read bucket:create bucket:delete bucket:read
 
