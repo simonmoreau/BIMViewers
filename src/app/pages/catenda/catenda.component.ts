@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { HttpService } from '../../shared/services/http.service';
 import { ICommonToken } from '../../shared/interfaces/common-token.model';
 
@@ -10,12 +10,23 @@ declare var bimsync: any;
   templateUrl: './catenda.component.html',
   styleUrl: './catenda.component.scss'
 })
-export class CatendaComponent implements OnInit {
+export class CatendaComponent implements OnInit, OnDestroy {
 
+  private viewer3d: any | null;
+  private viewer3dElement: HTMLElement | null
   private httpService: HttpService;
+  
   
     constructor(httpService: HttpService) {
       this.httpService = httpService;
+      this.viewer3d = null;
+      this.viewer3dElement = null;
+    }
+
+    ngOnDestroy(): void {
+      this.viewer3d = null;
+      this.viewer3dElement = null;
+
     }
 
   ngOnInit(): void {
@@ -37,19 +48,20 @@ export class CatendaComponent implements OnInit {
 
     const modelIds = ["be8d69755422404d9dac5860b62e0082"];
     
+    if (component.viewer3dElement != null) return;
 
-    const viewer3dElement = document.getElementById("viewer-3d");
-    const viewer3d = new bimsync.viewer3d.Viewer3D(viewer3dElement, viewer3dOptions);
+    this.viewer3dElement= document.getElementById("viewer-3d");
+    this.viewer3d = new bimsync.viewer3d.Viewer3D(this.viewer3dElement, viewer3dOptions);
     const type = "bim";
 
-    viewer3d.loadModelsFromToken(tokenUrl).then(() => {
-      const modelInfos = viewer3d.getModels();
+    this.viewer3d.loadModelsFromToken(tokenUrl).then(() => {
+      const modelInfos = this.viewer3d.getModels();
       const hiddenModels = modelInfos.map((modelInfo: any) => {
-        viewer3d.hideModel(modelInfo.id, type);
+        this.viewer3d.hideModel(modelInfo.id, type);
       });
 
       const modelId = "be8d69755422404d9dac5860b62e0082";
-      viewer3d.showModel(modelId, type);
+      this.viewer3d.showModel(modelId, type);
     });
   }
 
