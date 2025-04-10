@@ -1,5 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { HttpService } from '../../shared/services/http.service';
+import { ICommonToken } from '../../shared/interfaces/common-token.model';
 
 @Component({
   selector: 'app-autodesk',
@@ -22,20 +23,17 @@ export class AutodeskComponent implements OnInit, OnDestroy {
     Autodesk.Viewing.shutdown();
   }
 
-  ngOnInit(): void {
+  async ngOnInit(): Promise<void> {
 
-    this.httpService.get('https://func-bim42-prod-fr-bimviewers.azurewebsites.net/api/Autodesk').subscribe(response => {
-      console.log(response);
-    });
+    let token = await this.httpService.get<ICommonToken>('Autodesk')
+
 
     var options = {
       env: 'AutodeskProduction2',
       api: 'streamingV2_EU', // for models uploaded to EMEA change this option to 'streamingV2_EU'
       getAccessToken: function (onTokenReady: any) {
-        var token =
-          'eyJhbGciOiJSUzI1NiIsImtpZCI6IlhrUFpfSmhoXzlTYzNZS01oRERBZFBWeFowOF9SUzI1NiIsInBpLmF0bSI6ImFzc2MifQ.eyJzY29wZSI6WyJjb2RlOmFsbCIsImRhdGE6d3JpdGUiLCJkYXRhOnJlYWQiLCJidWNrZXQ6Y3JlYXRlIiwiYnVja2V0OmRlbGV0ZSIsImJ1Y2tldDpyZWFkIl0sImNsaWVudF9pZCI6ImNyQWZJRUk2MmZENnZpZHF0MFFmQmpqT0ZjMk1uREExVTNwOEtiNkJFQURhV1V1SCIsImlzcyI6Imh0dHBzOi8vZGV2ZWxvcGVyLmFwaS5hdXRvZGVzay5jb20iLCJhdWQiOiJodHRwczovL2F1dG9kZXNrLmNvbSIsImp0aSI6InU1bndjaDhEa1o1QUNhdFpWTlBTMnRId1BoaUc3dWxyeXpKamNuR1kybm5MOHRqbFQ3eDdic25WS3lVVVVKcGEiLCJleHAiOjE3NDQyMzIxOTN9.h12DKr7qeGNcYpEJzs8846ZT0_LV3Qj750oCgdoV59W_EhLoqSjABN4jxPE1X76i1qFUNqzaBZGgKEqNJy5YPHVGbYAJK7TV38ZzASxx76khYMavopNsdSnP7xq1fdZw8TxiTnO0Uz50oqmipCM79HKX4a-KGNF2Yqxl61_xyXvkxNCodDtStRnjg-akrxfN7Vv8tvL7gJoWEaH5dVhCktFW65-ZIjI7lzvplcDqBqO_0bjq9xTmMQ8WAmdNkm2tWqwRuqXiulXp7v5-8M7oLVVXgPiV0_WkI0jFm_12x0ZMIzyVogo5WXwwnTdrROiiGH1qI2nPSnlJPRTbMCKUuw';
         var timeInSeconds = 3600; // Use value provided by APS Authentication (OAuth) API
-        onTokenReady(token, timeInSeconds);
+        onTokenReady(token.accessToken, timeInSeconds);
       },
     };
 

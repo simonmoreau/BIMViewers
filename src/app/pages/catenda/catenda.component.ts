@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpService } from '../../shared/services/http.service';
+import { ICommonToken } from '../../shared/interfaces/common-token.model';
 
 declare var bimsync: any;
 
@@ -9,16 +11,25 @@ declare var bimsync: any;
   styleUrl: './catenda.component.scss'
 })
 export class CatendaComponent implements OnInit {
+
+  private httpService: HttpService;
+  
+    constructor(httpService: HttpService) {
+      this.httpService = httpService;
+    }
+
   ngOnInit(): void {
-    bimsync.setOnLoadCallback(this.onViewer3dLoad);
+    bimsync.setOnLoadCallback(() => this.onViewer3dLoad(this));
     bimsync.load();
   }
 
-  private onViewer3dLoad() {
+  private async onViewer3dLoad(component: CatendaComponent) {
     const projectId = "79d3bb6f8fbe49739311d80bd691e81b";
-    const token = "53194743d0cd48b0a5c17a1f1b36af0e";
+    // const token = "53194743d0cd48b0a5c17a1f1b36af0e";
 
-    const tokenUrl = `https://api.catenda.com/v2/projects/${projectId}/viewer3d/data?token=${token}`;
+    let token = await component.httpService.get<ICommonToken>('Catenda')
+
+    const tokenUrl = `https://api.catenda.com/v2/projects/${projectId}/viewer3d/data?token=${token.accessToken}`;
 
     const viewer3dOptions = {
       textRenderMode: "dom",
