@@ -5,6 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 using bimviewers_api.Services;
 using Autodesk.Authentication;
 using Autodesk.SDKManager;
+using System.Net.Http;
 
 var builder = FunctionsApplication.CreateBuilder(args);
 
@@ -27,6 +28,11 @@ void ConfigureServices(IServiceCollection services)
   AuthenticationClient authClient = new AuthenticationClient(sdkManager);
 
   services.AddSingleton<AuthenticationClient>(authClient);
-  services.AddHttpClient();
+
+  string baseAdresse = "https://api.catenda.com";
+  services.AddHttpClient("CatendaClient", client =>
+  {
+    client.BaseAddress = new Uri(baseAdresse);
+  });
 
 }
