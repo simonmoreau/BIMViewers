@@ -6,6 +6,7 @@ using Microsoft.Extensions.Options;
 using bimviewers_api.Services;
 using Autodesk.Authentication;
 using Autodesk.Authentication.Model;
+using bimviewers_api.Models;
 
 namespace bimviewers_api
 {
@@ -36,7 +37,7 @@ namespace bimviewers_api
 
       // code:all data:write data:read bucket:create bucket:delete bucket:read
 
-      return new OkObjectResult("Welcome to Azure Functions!");
+      return new OkObjectResult(new CommonToken(twoLeggedToken.AccessToken));
     }
   }
 }

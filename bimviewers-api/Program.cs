@@ -23,9 +23,10 @@ builder.Build().Run();
 // Method to configure services for dependency injection
 void ConfigureServices(IServiceCollection services)
 {
-        SDKManager sdkManager = SdkManagerBuilder.Create().Build();
-        AuthenticationClient authClient = new AuthenticationClient(sdkManager);
+  SDKManager sdkManager = SdkManagerBuilder.Create().Build();
+  AuthenticationClient authClient = new AuthenticationClient(sdkManager);
 
-        services.AddSingleton<AuthenticationClient>(authClient);
+  services.AddSingleton<AuthenticationClient>(authClient);
+  services.AddHttpClient();
 
 }
