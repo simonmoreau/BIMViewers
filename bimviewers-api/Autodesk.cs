@@ -32,7 +32,9 @@ namespace bimviewers_api
 
       TwoLeggedToken twoLeggedToken = await _authenticationClient.GetTwoLeggedTokenAsync(
           clientID, clientSecret,
-          new List<Scopes> { Scopes.BucketCreate });
+          new List<Scopes> { Scopes.DataRead });
+
+      // code:all data:write data:read bucket:create bucket:delete bucket:read
 
       return new OkObjectResult("Welcome to Azure Functions!");
     }
