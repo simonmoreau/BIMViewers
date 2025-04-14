@@ -21,6 +21,7 @@
     "@angular/platform-browser": "^19.0.0",
     "@angular/platform-browser-dynamic": "^19.0.0",
     "@angular/router": "^19.0.0",
+    "@bimdata/viewer": "^2.8.0",
     "@speckle/viewer": "^2.23.16",
     "@thatopen/components": "^2.4.5",
     "@thatopen/fragments": "^2.4.0",

@@ -273,6 +273,74 @@ https://github.com/autodesk-platform-services/aps-tutorial-postman/blob/master/M
 
 http://api.catenda.com/oauth2/authorize?client_id=bDaDxEqY4icOBdp&response_type=code&redirect_uri=https%3A%2F%2Fcatenda.com%2Fbim-solutions-open-standards%2Fcatenda-hub-common-data-environment%2F
 
+# BIM Data
+
+Using there swagger 
+https://api.bimdata.io/doc#/collaboration/createCloud
+
+Create an app
+
+Create a CLoud
+
+```json
+{
+  "id": 31760,
+  "name": "bim42",
+  "features": [],
+  "marketplace_apps": [],
+  "organization": {
+    "id": 779,
+    "name": "Simon Moreau",
+    "is_personnal": true,
+    "created_at": "2021-04-01T19:54:29.920142Z",
+    "updated_at": "2021-04-01T19:54:30.058967Z",
+    "logo": null
+  },
+  "creator": null,
+  "creator_app": "viewer-test",
+  "is_default": false,
+  "created_at": "2025-04-14T20:32:49.227907Z",
+  "image": null,
+  "updated_at": "2025-04-14T20:32:49.227925Z"
+}
+```
+
+Create a demo project https://api.bimdata.io/doc#/collaboration/createDemo
+
+```json
+{
+  "id": 1407938,
+  "logo": null,
+  "name": "Demo",
+  "description": null,
+  "cloud": {
+    "id": 31760,
+    "name": "bim42",
+    "features": [],
+    "marketplace_apps": [],
+    "organization": {
+      "id": 779,
+      "name": "Simon Moreau",
+      "is_personnal": true,
+      "created_at": "2021-04-01T19:54:29.920142Z",
+      "updated_at": "2021-04-01T19:54:30.058967Z",
+      "logo": null
+    },
+    "creator": null,
+    "creator_app": "viewer-test",
+    "is_default": false,
+    "created_at": "2025-04-14T20:32:49.227907Z",
+    "image": null,
+    "updated_at": "2025-04-14T20:32:49.227925Z"
+  },
+  "status": "A",
+  "created_at": "2025-04-14T20:34:30.305600Z",
+  "updated_at": "2025-04-14T20:34:30.307905Z",
+  "root_folder_id": 36499441,
+  "main_model_id": null,
+  "children": []
+}
+```
 
 ## Additional Resources
 
