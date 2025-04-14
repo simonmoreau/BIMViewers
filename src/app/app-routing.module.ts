@@ -9,6 +9,7 @@ import { CatendaComponent } from './pages/catenda/catenda.component';
 import { TasksComponent } from './pages/tasks/tasks.component';
 import { DxDataGridModule, DxFormModule } from 'devextreme-angular';
 import { AutodeskComponent } from './pages/autodesk/autodesk.component';
+import { SpeckleComponent } from './pages/speckle/speckle.component';
 
 const routes: Routes = [
   {
@@ -34,6 +35,11 @@ const routes: Routes = [
   {
     path: 'autodesk',
     component: AutodeskComponent,
+    canActivate: [ AuthGuardService ]
+  },
+  {
+    path: 'speckle',
+    component: SpeckleComponent,
     canActivate: [ AuthGuardService ]
   },
   {

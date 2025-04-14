@@ -12,13 +12,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { WebIfcViewerComponent } from './pages/web-ifc-viewer/web-ifc-viewer.component';
 import { CatendaComponent } from './pages/catenda/catenda.component';
 import { AutodeskComponent } from './pages/autodesk/autodesk.component';
+import { SpeckleComponent } from './pages/speckle/speckle.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     WebIfcViewerComponent,
     CatendaComponent,
-    AutodeskComponent
+    AutodeskComponent,
+    SpeckleComponent
   ],
   imports: [
     BrowserModule,

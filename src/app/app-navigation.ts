@@ -18,5 +18,10 @@ export const navigation = [
     text: 'Autodesk',
     path: '/autodesk',
     icon: 'home'
+  },
+  {
+    text: 'Speckle',
+    path: '/speckle',
+    icon: 'home'
   }
 ];
