@@ -23,5 +23,10 @@ export const navigation = [
     text: 'Speckle',
     path: '/speckle',
     icon: 'home'
+  },
+  {
+    text: 'BIM Data',
+    path: '/bim-data',
+    icon: 'home'
   }
 ];

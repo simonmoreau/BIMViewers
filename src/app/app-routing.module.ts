@@ -10,6 +10,7 @@ import { TasksComponent } from './pages/tasks/tasks.component';
 import { DxDataGridModule, DxFormModule } from 'devextreme-angular';
 import { AutodeskComponent } from './pages/autodesk/autodesk.component';
 import { SpeckleComponent } from './pages/speckle/speckle.component';
+import { BimDataComponent } from './pages/bim-data/bim-data.component';
 
 const routes: Routes = [
   {
@@ -40,6 +41,11 @@ const routes: Routes = [
   {
     path: 'speckle',
     component: SpeckleComponent,
+    canActivate: [ AuthGuardService ]
+  },
+  {
+    path: 'bim-data',
+    component: BimDataComponent,
     canActivate: [ AuthGuardService ]
   },
   {

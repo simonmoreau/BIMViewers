@@ -13,6 +13,7 @@ import { WebIfcViewerComponent } from './pages/web-ifc-viewer/web-ifc-viewer.com
 import { CatendaComponent } from './pages/catenda/catenda.component';
 import { AutodeskComponent } from './pages/autodesk/autodesk.component';
 import { SpeckleComponent } from './pages/speckle/speckle.component';
+import { BimDataComponent } from './pages/bim-data/bim-data.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { SpeckleComponent } from './pages/speckle/speckle.component';
     WebIfcViewerComponent,
     CatendaComponent,
     AutodeskComponent,
-    SpeckleComponent
+    SpeckleComponent,
+    BimDataComponent
   ],
   imports: [
     BrowserModule,
