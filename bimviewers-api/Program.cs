@@ -35,4 +35,10 @@ void ConfigureServices(IServiceCollection services)
     client.BaseAddress = new Uri(baseAdresse);
   });
 
+  services.AddHttpClient("BIMDataClient", client =>
+  {
+    client.BaseAddress = new Uri("https://iam.bimdata.io");
+  });
+
+
 }
