@@ -61,7 +61,10 @@ export class CatendaComponent implements OnInit, OnDestroy {
       });
 
       const modelId = "be8d69755422404d9dac5860b62e0082";
+      const model = modelInfos.find((modelInfo: any) => modelInfo.id === modelId);
       this.viewer3d.showModel(modelId, type);
+
+      this.viewer3d.lookAtBoundingBox(model.boundingBox);
     });
   }
 
