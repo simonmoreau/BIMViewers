@@ -28,5 +28,10 @@ export const navigation = [
     text: 'BIM Data',
     path: '/bim-data',
     icon: 'home'
+  },
+  {
+    text: 'XBIM',
+    path: '/xbim',
+    icon: 'home'
   }
 ];

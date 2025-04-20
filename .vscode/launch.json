@@ -3,6 +3,16 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "name": "Debug xBIM",
+      "type": "clr",
+      "request": "launch",
+      "program": "${workspaceFolder}/generators/xBIM/bin/Debug/net48/xBIM.exe",
+      "args": [],
+      "cwd": "${workspaceFolder}/generators/xBIM",
+      "stopAtEntry": false,
+      "console": "internalConsole"
+    },
+    {
       "name": "C#: Function Debug",
       "type": "dotnet",
       "request": "launch",

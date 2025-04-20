@@ -14,6 +14,7 @@ import { CatendaComponent } from './pages/catenda/catenda.component';
 import { AutodeskComponent } from './pages/autodesk/autodesk.component';
 import { SpeckleComponent } from './pages/speckle/speckle.component';
 import { BimDataComponent } from './pages/bim-data/bim-data.component';
+import { XbimComponent } from './pages/xbim/xbim.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { BimDataComponent } from './pages/bim-data/bim-data.component';
     CatendaComponent,
     AutodeskComponent,
     SpeckleComponent,
-    BimDataComponent
+    BimDataComponent,
+    XbimComponent
   ],
   imports: [
     BrowserModule,

@@ -11,6 +11,7 @@ import { DxDataGridModule, DxFormModule } from 'devextreme-angular';
 import { AutodeskComponent } from './pages/autodesk/autodesk.component';
 import { SpeckleComponent } from './pages/speckle/speckle.component';
 import { BimDataComponent } from './pages/bim-data/bim-data.component';
+import { XbimComponent } from './pages/xbim/xbim.component';
 
 const routes: Routes = [
   {
@@ -46,6 +47,11 @@ const routes: Routes = [
   {
     path: 'bim-data',
     component: BimDataComponent,
+    canActivate: [ AuthGuardService ]
+  },
+  {
+    path: 'xbim',
+    component: XbimComponent,
     canActivate: [ AuthGuardService ]
   },
   {
