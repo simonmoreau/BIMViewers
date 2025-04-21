@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Viewer, State } from '@dangl/xbim-viewer';
 
 @Component({
   selector: 'app-xbim',
@@ -9,14 +10,18 @@ import { Component, OnInit } from '@angular/core';
 export class XbimComponent implements OnInit {
   constructor() {}
 
+  private viewer: Viewer | undefined;
+  loadingFile: boolean = true;
+
   ngOnInit(): void {
-    
-    // var viewer = new Viewer('viewer-3d');
-    // viewer.on('loaded', () => {
-    //     viewer.show(ViewType.DEFAULT);
-    // });
-    // viewer.load('../data/SampleHouse.wexbim');
-    // viewer.start();
+    const modelUrl = 'https://stbim42prodfrbimviewer.blob.core.windows.net/models/snowdon-towers-sample-structural.wexBIM';
+    this.viewer = new Viewer('viewer');
+    this.viewer.start();
+    this.viewer.on('loaded',
+        () => {
+            this.loadingFile = false;
+        });
+    this.viewer.load(modelUrl, 'model');
   }
 
 }
