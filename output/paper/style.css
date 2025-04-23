@@ -1,0 +1,68 @@
+:root body {
+  --bs-body-font-family: "Titillium Web";
+  --bs-body-font-size:0.9rem;
+}
+
+:root a {
+  color:#1c364a;
+}
+
+body {
+  background: transparent;
+  word-wrap:break-word;
+}
+
+footer {
+  color: #78a2b6;
+  width: 100%;
+  text-align: center;
+}
+
+page {
+  background: white;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 0.5cm;
+  box-shadow: 0 0 0.5cm rgba(0, 0, 0, 0.5);
+}
+
+page[size="A4"] {
+  width: 210mm;
+  height: 297mm;
+  padding: 1.5cm;
+  padding-bottom: 1cm;
+}
+
+@media print {
+
+  html,
+  body {
+    width: 210mm;
+    height: 297mm;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  page {
+    margin: 0;
+    border: initial;
+    border-radius: initial;
+    width: initial;
+    min-height: initial;
+    box-shadow: initial;
+    background: initial;
+    page-break-after: always;
+  }
+}
+
+table {
+  width: 100%;
+  table-layout: fixed;
+}
+
+th:nth-child(1) {
+  width: 20%;
+}
+
+
+
