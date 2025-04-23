@@ -16,25 +16,20 @@
         "Backend_model": "\u003Cp\u003EH\u00E9bergement\u003C/p\u003E\n",
         "BCF": "\u003Cp\u003EGestion du BCF\u003C/p\u003E\n",
         "BCF_API": "\u003Cp\u003EAPI BCF\u003C/p\u003E\n",
-        "3D": "\u003Cp\u003EVisualisation 3D et navigation dans les mod\u00E8les.\u003C/p\u003E\n",
-        "Metadata": "\u003Cp\u003EAcc\u00E8s aux m\u00E9tadonn\u00E9es BIM.\u003C/p\u003E\n",
-        "Measure": "\u003Cp\u003ECapacit\u00E9 \u00E0 effectuer des mesures (distance, surface, etc.).\u003C/p\u003E\n",
-        "Visibility": "\u003Cp\u003EFiltrage et visibilit\u00E9 des \u00E9l\u00E9ments.\u003C/p\u003E\n",
-        "Annotations": "\u003Cp\u003EAjout d\u0027annotations et gestion des r\u00E9visions.\u003C/p\u003E\n",
-        "Compatibility": "\u003Cp\u003ECompatibilit\u00E9 avec les technologies utilis\u00E9es par Egis (JavaScript, React).\u003C/p\u003E\n",
-        "Format": "\u003Cp\u003ESupport des principaux formats BIM (IFC, BCF) et capacit\u00E9 \u00E0 traiter des fichiers natifs (RVT, Civil 3D).\u003C/p\u003E\n",
-        "LoadingTime": "\u003Cp\u003ETemps de chargement des mod\u00E8les BIM.\u003C/p\u003E\n",
-        "Memory": "\u003Cp\u003EGestion de la m\u00E9moire pour les mod\u00E8les complexes.\u003C/p\u003E\n",
-        "UserFriendly": "\u003Cp\u003EInterface utilisateur intuitive et performante.\u003C/p\u003E\n",
-        "Docker": "\u003Cp\u003ECompatibilit\u00E9 avec l\u0027infrastructure Docker et Kubernetes.\u003C/p\u003E\n",
-        "Pipeline": "\u003Cp\u003EInt\u00E9gration avec le pipeline GitLab CI/CD.\u003C/p\u003E\n",
+        "3D": "\u003Cp\u003EVisualisation 3D\u003C/p\u003E\n",
+        "Metadata": "\u003Cp\u003EM\u00E9tadonn\u00E9es BIM.\u003C/p\u003E\n",
+        "Measure": "\u003Cp\u003EMesures\u003C/p\u003E\n",
+        "Visibility": "\u003Cp\u003EFiltrage des \u00E9l\u00E9ments\u003C/p\u003E\n",
+        "Annotations": "\u003Cp\u003EAnnotations\u003C/p\u003E\n",
+        "Compatibility": "\u003Cp\u003ECompatibilit\u00E9 React\u003C/p\u003E\n",
+        "LoadingTime": "\u003Cp\u003ETemps de chargement\u003C/p\u003E\n",
+        "Memory": "\u003Cp\u003EGestion de la m\u00E9moire\u003C/p\u003E\n",
+        "UserFriendly": "\u003Cp\u003EUX User-friendly\u003C/p\u003E\n",
+        "Docker": "\u003Cp\u003EInfrastructure Docker\u003C/p\u003E\n",
+        "Pipeline": "\u003Cp\u003EPipeline GitLab CI/CD.\u003C/p\u003E\n",
         "Scale": "\u003Cp\u003EScalabilit\u00E9 de la solution.\u003C/p\u003E\n",
-        "Auth": "\u003Cp\u003EInt\u00E9gration avec le syst\u00E8me d\u0027authentification interne d\u0027Egis.\u003C/p\u003E\n",
-        "Encryption": "\u003Cp\u003ES\u00E9curisation des \u00E9changes de donn\u00E9es (HTTPS, SSL/TLS).\u003C/p\u003E\n",
-        "Documentation": "\u003Cp\u003EQualit\u00E9 de la documentation fournie.\u003C/p\u003E\n",
-        "Support": "\u003Cp\u003EDisponibilit\u00E9 du support technique.\u003C/p\u003E\n",
-        "Cost": "\u003Cp\u003E\u00C9tude du mod\u00E8le de co\u00FBt.\u003C/p\u003E\n",
-        "LicenceModel": "\u003Cp\u003EContraintes de licence.\u003C/p\u003E\n"
+        "Auth": "\u003Cp\u003EAuthentification interne d\u0027Egis.\u003C/p\u003E\n",
+        "Encryption": "\u003Cp\u003EHTTPS, SSL/TLS\u003C/p\u003E\n"
       }
     ]
   },
@@ -61,7 +56,6 @@
         "Visibility": "",
         "Annotations": "",
         "Compatibility": "",
-        "Format": "",
         "LoadingTime": "",
         "Memory": "",
         "UserFriendly": "",
@@ -69,11 +63,7 @@
         "Pipeline": "",
         "Scale": "",
         "Auth": "",
-        "Encryption": "",
-        "Documentation": "",
-        "Support": "",
-        "Cost": "",
-        "LicenceModel": ""
+        "Encryption": ""
       },
       {
         "Question": "\u003Cp\u003ExBIM\u003C/p\u003E\n",
@@ -95,7 +85,6 @@
         "Visibility": "",
         "Annotations": "",
         "Compatibility": "",
-        "Format": "",
         "LoadingTime": "",
         "Memory": "",
         "UserFriendly": "",
@@ -103,11 +92,7 @@
         "Pipeline": "",
         "Scale": "",
         "Auth": "",
-        "Encryption": "",
-        "Documentation": "",
-        "Support": "",
-        "Cost": "",
-        "LicenceModel": ""
+        "Encryption": ""
       }
     ]
   },
@@ -134,7 +119,6 @@
         "Visibility": "",
         "Annotations": "",
         "Compatibility": "",
-        "Format": "",
         "LoadingTime": "",
         "Memory": "",
         "UserFriendly": "",
@@ -142,11 +126,7 @@
         "Pipeline": "",
         "Scale": "",
         "Auth": "",
-        "Encryption": "",
-        "Documentation": "",
-        "Support": "",
-        "Cost": "",
-        "LicenceModel": ""
+        "Encryption": ""
       },
       {
         "Question": "\u003Cp\u003EAutodesk Viewer\u003C/p\u003E\n",
@@ -168,7 +148,6 @@
         "Visibility": "",
         "Annotations": "",
         "Compatibility": "",
-        "Format": "",
         "LoadingTime": "",
         "Memory": "",
         "UserFriendly": "",
@@ -176,11 +155,7 @@
         "Pipeline": "",
         "Scale": "",
         "Auth": "",
-        "Encryption": "",
-        "Documentation": "",
-        "Support": "",
-        "Cost": "",
-        "LicenceModel": ""
+        "Encryption": ""
       }
     ]
   },
@@ -207,7 +182,6 @@
         "Visibility": "",
         "Annotations": "",
         "Compatibility": "",
-        "Format": "",
         "LoadingTime": "",
         "Memory": "",
         "UserFriendly": "",
@@ -215,11 +189,7 @@
         "Pipeline": "",
         "Scale": "",
         "Auth": "",
-        "Encryption": "",
-        "Documentation": "",
-        "Support": "",
-        "Cost": "",
-        "LicenceModel": ""
+        "Encryption": ""
       },
       {
         "Question": "\u003Cp\u003EItwin\u003C/p\u003E\n",
@@ -241,7 +211,6 @@
         "Visibility": null,
         "Annotations": null,
         "Compatibility": null,
-        "Format": null,
         "LoadingTime": null,
         "Memory": null,
         "UserFriendly": null,
@@ -249,11 +218,7 @@
         "Pipeline": null,
         "Scale": null,
         "Auth": null,
-        "Encryption": null,
-        "Documentation": null,
-        "Support": null,
-        "Cost": null,
-        "LicenceModel": null
+        "Encryption": null
       }
     ]
   }

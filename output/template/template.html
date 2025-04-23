@@ -31,21 +31,33 @@
           </thead>
           <tbody>
             <tr>
-              <th scope="row">{{pages[0].Solutions[0].WebSite}}</th>
+              <th scope="row">{{pages[0].Solutions[0].Question }}</th>
+              {% for solution in page.Solutions %}
+              <td>{{solution.Question}}</td>
+              {% endfor %}
+            </tr>
+            <tr>
+              <th scope="row">{{pages[0].Solutions[0].WebSite }}</th>
               {% for solution in page.Solutions %}
               <td>{{solution.WebSite}}</td>
               {% endfor %}
             </tr>
             <tr>
-              <th scope="row">{{pages[0].Solutions[0].Github}}</th>
+              <th scope="row">{{pages[0].Solutions[0].Github }}</th>
               {% for solution in page.Solutions %}
               <td>{{solution.Github}}</td>
               {% endfor %}
             </tr>
             <tr>
-              <th scope="row">{{pages[0].Solutions[0].Description }}</th>
+              <th scope="row">{{pages[0].Solutions[0].Comments }}</th>
               {% for solution in page.Solutions %}
-              <td>{{solution.Description}}</td>
+              <td>{{solution.Comments}}</td>
+              {% endfor %}
+            </tr>
+            <tr>
+              <th scope="row">{{pages[0].Solutions[0].Editor }}</th>
+              {% for solution in page.Solutions %}
+              <td>{{solution.Editor}}</td>
               {% endfor %}
             </tr>
             <tr>
@@ -79,12 +91,6 @@
               {% endfor %}
             </tr>
             <tr>
-              <th scope="row">{{pages[0].Solutions[0].Documentation }}</th>
-              {% for solution in page.Solutions %}
-              <td>{{solution.Documentation}}</td>
-              {% endfor %}
-            </tr>
-            <tr>
               <th scope="row">{{pages[0].Solutions[0].Backend_model }}</th>
               {% for solution in page.Solutions %}
               <td>{{solution.Backend_model}}</td>
@@ -100,6 +106,112 @@
               <th scope="row">{{pages[0].Solutions[0].BCF_API }}</th>
               {% for solution in page.Solutions %}
               <td>{{solution.BCF_API}}</td>
+              {% endfor %}
+            </tr>
+          </tbody>
+        </table>
+      </article>
+      <footer class="d-flex">
+        <img height="20rem" src="bim42_logo.png" alt="BIM 42"/>
+        <p class="flex-grow-1 mb-0">BIM Viewer</p>
+        <p class="mb-0">{{ forloop.index }} of {{ forloop.length }}</p>
+      </footer>
+    </page>
+
+    <page size="A4" class="d-flex flex-column">
+      <article class="flex-grow-1">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col"> </th>
+              {% for solution in page.Solutions %}
+              <th scope="col">{{solution.Question}}</th>
+              {% endfor %}
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">{{pages[0].Solutions[0].3D }}</th>
+              {% for solution in page.Solutions %}
+              <td>{{solution.3D}}</td>
+              {% endfor %}
+            </tr>
+            <tr>
+              <th scope="row">{{pages[0].Solutions[0].Metadata }}</th>
+              {% for solution in page.Solutions %}
+              <td>{{solution.Metadata}}</td>
+              {% endfor %}
+            </tr>
+            <tr>
+              <th scope="row">{{pages[0].Solutions[0].Measure }}</th>
+              {% for solution in page.Solutions %}
+              <td>{{solution.Measure}}</td>
+              {% endfor %}
+            </tr>
+            <tr>
+              <th scope="row">{{pages[0].Solutions[0].Visibility }}</th>
+              {% for solution in page.Solutions %}
+              <td>{{solution.Visibility}}</td>
+              {% endfor %}
+            </tr>
+            <tr>
+              <th scope="row">{{pages[0].Solutions[0].Annotations }}</th>
+              {% for solution in page.Solutions %}
+              <td>{{solution.Annotations}}</td>
+              {% endfor %}
+            </tr>
+            <tr>
+              <th scope="row">{{pages[0].Solutions[0].Compatibility }}</th>
+              {% for solution in page.Solutions %}
+              <td>{{solution.Compatibility}}</td>
+              {% endfor %}
+            </tr>
+            <tr>
+              <th scope="row">{{pages[0].Solutions[0].LoadingTime }}</th>
+              {% for solution in page.Solutions %}
+              <td>{{solution.LoadingTime}}</td>
+              {% endfor %}
+            </tr>
+            <tr>
+              <th scope="row">{{pages[0].Solutions[0].Memory }}</th>
+              {% for solution in page.Solutions %}
+              <td>{{solution.Memory}}</td>
+              {% endfor %}
+            </tr>
+            <tr>
+              <th scope="row">{{pages[0].Solutions[0].UserFriendly }}</th>
+              {% for solution in page.Solutions %}
+              <td>{{solution.UserFriendly}}</td>
+              {% endfor %}
+            </tr>
+            <tr>
+              <th scope="row">{{pages[0].Solutions[0].Docker }}</th>
+              {% for solution in page.Solutions %}
+              <td>{{solution.Docker}}</td>
+              {% endfor %}
+            </tr>
+            <tr>
+              <th scope="row">{{pages[0].Solutions[0].Pipeline }}</th>
+              {% for solution in page.Solutions %}
+              <td>{{solution.Pipeline}}</td>
+              {% endfor %}
+            </tr>
+            <tr>
+              <th scope="row">{{pages[0].Solutions[0].Scale }}</th>
+              {% for solution in page.Solutions %}
+              <td>{{solution.Scale}}</td>
+              {% endfor %}
+            </tr>
+            <tr>
+              <th scope="row">{{pages[0].Solutions[0].Auth }}</th>
+              {% for solution in page.Solutions %}
+              <td>{{solution.Auth}}</td>
+              {% endfor %}
+            </tr>
+            <tr>
+              <th scope="row">{{pages[0].Solutions[0].Encryption }}</th>
+              {% for solution in page.Solutions %}
+              <td>{{solution.Encryption}}</td>
               {% endfor %}
             </tr>
           </tbody>
