@@ -9,6 +9,9 @@ namespace CreateWexBIM
         public static void Main()
         {
             string fileName = @"C:\Users\smoreau\Downloads\Snowdon Towers Sample Structural.ifc";
+
+            var timer = new System.Diagnostics.Stopwatch();
+            timer.Start();
             using (var model = IfcStore.Open(fileName))
             {
                 var context = new Xbim3DModelContext(model);
@@ -25,6 +28,9 @@ namespace CreateWexBIM
                     wexBiMfile.Close();
                 }
             }
+
+            timer.Stop();
+            System.Console.WriteLine($"Elapsed time: {timer.ElapsedMilliseconds} ms");
         }
     }
 }
