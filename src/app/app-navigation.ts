@@ -33,5 +33,10 @@ export const navigation = [
     text: 'XBIM',
     path: '/xbim',
     icon: 'home'
+  },
+  {
+    text: 'iTwin',
+    path: '/itwin',
+    icon: 'home'
   }
 ];

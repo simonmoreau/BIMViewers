@@ -15,6 +15,7 @@ import { AutodeskComponent } from './pages/autodesk/autodesk.component';
 import { SpeckleComponent } from './pages/speckle/speckle.component';
 import { BimDataComponent } from './pages/bim-data/bim-data.component';
 import { XbimComponent } from './pages/xbim/xbim.component';
+import { ItwinComponent } from './pages/itwin/itwin.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { XbimComponent } from './pages/xbim/xbim.component';
     AutodeskComponent,
     SpeckleComponent,
     BimDataComponent,
-    XbimComponent
+    XbimComponent,
+    ItwinComponent
   ],
   imports: [
     BrowserModule,

@@ -12,6 +12,7 @@ import { AutodeskComponent } from './pages/autodesk/autodesk.component';
 import { SpeckleComponent } from './pages/speckle/speckle.component';
 import { BimDataComponent } from './pages/bim-data/bim-data.component';
 import { XbimComponent } from './pages/xbim/xbim.component';
+import { ItwinComponent } from './pages/itwin/itwin.component';
 
 const routes: Routes = [
   {
@@ -52,6 +53,11 @@ const routes: Routes = [
   {
     path: 'xbim',
     component: XbimComponent,
+    canActivate: [ AuthGuardService ]
+  },
+    {
+    path: 'itwin',
+    component: ItwinComponent,
     canActivate: [ AuthGuardService ]
   },
   {
