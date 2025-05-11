@@ -16,6 +16,7 @@ import { SpeckleComponent } from './pages/speckle/speckle.component';
 import { BimDataComponent } from './pages/bim-data/bim-data.component';
 import { XbimComponent } from './pages/xbim/xbim.component';
 import { ItwinComponent } from './pages/itwin/itwin.component';
+import { ViewportDirective } from './pages/itwin/viewport.directive';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { ItwinComponent } from './pages/itwin/itwin.component';
     SpeckleComponent,
     BimDataComponent,
     XbimComponent,
-    ItwinComponent
+    ItwinComponent,
+    ViewportDirective
   ],
   imports: [
     BrowserModule,

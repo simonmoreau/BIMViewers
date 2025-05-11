@@ -1,1 +1,9 @@
-<p>itwin works!</p>
+<div class="root">
+  <div
+    appViewport
+    class="viewer-viewport"
+    *ngIf="initialized"
+    [viewportId]="viewportId"
+    (initialized)="doSomethingToViewport($event)"
+  ></div>
+</div>
