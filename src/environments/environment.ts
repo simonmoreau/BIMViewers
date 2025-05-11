@@ -3,13 +3,26 @@
 * See LICENSE.md in the project root for license terms and full copyright notice.
 *--------------------------------------------------------------------------------------------*/
 // REPLACE WITH YOUR CLIENT FROM https://developer.bentley.com/register/
+
+import { BrowserAuthorizationClientConfiguration } from "@itwin/browser-authorization";
+
+export interface EnvironmentOptions {
+  production: boolean;
+  authorization: BrowserAuthorizationClientConfiguration;
+  iTwinId: string;
+  iModelId: string;
+  map: {
+    bingKey: string;
+  };
+}
+
 export const environment = {
   production: false,
-  authorization:  {
+  authorization: {
     clientId: "spa-Ii1yu8WkvyaWssDPls95o6CCN",
     scope: "itwin-platform",
-    redirectUri: "http://localhost:4200/",
-    postSignoutRedirectUri: "http://localhost:4200/",
+    redirectUri: "http://localhost:4200/itwin", // please note trailing "/" matters between this and app registration config
+    postSignoutRedirectUri: "http://localhost:4200/itwin",
     responseType: "code",
     authority: "https://ims.bentley.com"
   },
