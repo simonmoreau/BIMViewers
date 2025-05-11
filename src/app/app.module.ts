@@ -17,6 +17,8 @@ import { BimDataComponent } from './pages/bim-data/bim-data.component';
 import { XbimComponent } from './pages/xbim/xbim.component';
 import { ItwinComponent } from './pages/itwin/itwin.component';
 import { ViewportDirective } from './pages/itwin/viewport.directive';
+import { ToolsService } from './shared/services/tools.service';
+import { SelectionLoggerService } from "./shared/services/selection-logger.service";
 
 @NgModule({
   declarations: [
@@ -48,7 +50,9 @@ import { ViewportDirective } from './pages/itwin/viewport.directive';
     provideHttpClient(),
     AuthService,
     ScreenService,
-    AppInfoService
+    AppInfoService,
+    ToolsService,
+    SelectionLoggerService
   ],
   bootstrap: [AppComponent]
 })

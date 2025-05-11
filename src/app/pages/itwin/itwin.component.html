@@ -1,9 +1,7 @@
-<div class="root">
-  <div
-    appViewport
-    class="viewer-viewport"
-    *ngIf="initialized"
-    [viewportId]="viewportId"
-    (initialized)="doSomethingToViewport($event)"
-  ></div>
+
+<div class="main">
+  <div id="viewer-3d">
+    <div appViewport class="viewer-viewport" *ngIf="initialized" [viewportId]="viewportId"
+      (initialized)="doSomethingToViewport($event)"></div>
+  </div>
 </div>

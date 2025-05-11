@@ -26,6 +26,7 @@
     "@speckle/viewer": "^2.23.16",
     "@thatopen/components": "^2.4.5",
     "@thatopen/fragments": "^2.4.0",
+    "@bentley/icons-generic-webfont": "^1.0.34",
     "@itwin/browser-authorization": "^1.1.4",
     "@itwin/core-common": "^4.11.1",
     "@itwin/core-frontend": "^4.11.1",

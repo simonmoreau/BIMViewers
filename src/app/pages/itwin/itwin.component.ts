@@ -12,6 +12,9 @@ import { IModelApp } from '@itwin/core-frontend';
 import { FrontendIModelsAccess } from '@itwin/imodels-access-frontend';
 import { IModelsClient } from '@itwin/imodels-client-management';
 import { PresentationRpcInterface } from '@itwin/presentation-common';
+import type { ViewportProps } from './viewport-props';
+import { ToolsService } from './../../shared/services/tools.service';
+import { SelectionLoggerService } from './../../shared/services/selection-logger.service';
 
 @Component({
   selector: 'app-itwin',
@@ -20,7 +23,10 @@ import { PresentationRpcInterface } from '@itwin/presentation-common';
   styleUrl: './itwin.component.scss',
 })
 export class ItwinComponent implements OnInit {
-  constructor(private authService: AuthorizationService) {}
+  constructor(
+        private toolsService: ToolsService,
+    private selectionLoggerService: SelectionLoggerService,
+    private authService: AuthorizationService) {}
 
   public initialized = false;
   public viewportId = 'myFirstViewportId';
@@ -49,13 +55,7 @@ export class ItwinComponent implements OnInit {
             baseUrl: `https://api.bentley.com/imodels`,
           },
         })
-      ),
-      mapLayerOptions: {
-        BingMaps: {
-          key: 'key',
-          value: environment.map?.bingKey ?? '',
-        },
-      },
+      )
     });
     BentleyCloudRpcManager.initializeClient(
       {
@@ -67,13 +67,20 @@ export class ItwinComponent implements OnInit {
     this.initialized = true;
   }
 
-    /**
+  /**
    * Viewport will emit an event when it is done loading.
    *  Use the id you provided (important only if you have more than one viewport)
    *  to add tools, extensions, etc.
    */
-  public doSomethingToViewport(viewportProps: any) {
-
-    
+  public doSomethingToViewport(viewportProps: ViewportProps) {
+    if (viewportProps.viewportId === this.viewportId) {
+      // adds basic navigation tools to the viewport
+      this.toolsService.addToolbar(viewportProps.viewportDiv);
+      // logs element properties to the console when selected
+      
+      viewportProps.imodelConnection.selectionSet.onChanged.addListener((evt) => {
+        this.selectionLoggerService.onSelectionChanged(viewportProps.imodelConnection, evt);
+      });
+    }
   }
 }

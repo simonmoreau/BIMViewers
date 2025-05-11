@@ -27,8 +27,5 @@ export const environment = {
     authority: "https://ims.bentley.com"
   },
   iTwinId: "935bac8c-7bc6-4eac-96fe-76e62cf930be",
-  iModelId: "ef6c05ce-12d8-415e-a8bb-695595d4153e",
-  map: {
-    bingKey: ""
-  }
+  iModelId: "ef6c05ce-12d8-415e-a8bb-695595d4153e"
 };
