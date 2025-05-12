@@ -21,8 +21,8 @@ export const environment = {
   authorization: {
     clientId: "spa-Ii1yu8WkvyaWssDPls95o6CCN",
     scope: "itwin-platform",
-    redirectUri: "https://salmon-grass-07998f603.6.azurestaticapps.net/itwin", // please note trailing "/" matters between this and app registration config
-    postSignoutRedirectUri: "https://salmon-grass-07998f603.6.azurestaticapps.net/itwin",
+    redirectUri: "http://localhost:4200/itwin", // please note trailing "/" matters between this and app registration config
+    postSignoutRedirectUri: "http://localhost:4200/itwin",
     responseType: "code",
     authority: "https://ims.bentley.com"
   },
