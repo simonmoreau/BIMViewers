@@ -1,28 +1,51 @@
-import * as OBC from "@thatopen/components";
-import Stats from "stats.js";
+import * as OBC from '@thatopen/components';
+import Stats from 'stats.js';
+import * as fs from 'fs';
 // You have to import * as FRAGS from "@thatopen/fragments"
 // import * as FRAGS from "../node_modules/@thatopen/fragments/dist/index";
 // const FRAGS = require('../node_modules/@thatopen/fragments/dist/index');
-import { IfcImporter, FragmentsModels } from "@thatopen/fragments";
+import { IfcImporter, FragmentsModels } from '@thatopen/fragments';
 
-console.log('Hello world!')
+console.log('Hello world!');
 
-const serializer : IfcImporter = new IfcImporter();
-serializer.wasm = { absolute: true, path: 'node_modules/web-ifc/' };
-// A convenient variable to hold the ArrayBuffer data loaded into memory
-let fragmentBytes: ArrayBuffer | null = null;
-let onConversionFinish = () => { 
+async function createFragsModelFromIfc(url: string) {
+  const serializer = new IfcImporter();
 
-    console.log("Conversion finished") 
-};
+  serializer.wasm.path = "../../node_modules/web-ifc/";
 
-const convertIFC = async () => {
-  const url = "https://thatopen.github.io/engine_fragment/resources/ifc/school_str.ifc";
-  const ifcFile = await fetch(url);
-  const ifcBuffer = await ifcFile.arrayBuffer();
-  const ifcBytes = new Uint8Array(ifcBuffer);
-  fragmentBytes = await serializer.process({ bytes: ifcBytes });
-  onConversionFinish();
-};
+  let fileFinishedReading = false;
+  let previousOffset = -1;
 
-var test = convertIFC();
+  const input = fs.openSync(url, "r");
+
+  const readCallback = (offset: number, size: number) => {
+    if (!fileFinishedReading) {
+      console.log(`Reading IFC file: Offset ${offset} Size ${size}`);
+      if (offset < previousOffset) {
+        fileFinishedReading = true;
+        console.log(
+          `File reading finished! Starting conversion to fragments...`,
+        );
+      }
+      previousOffset = offset;
+    }
+
+    const data = new Uint8Array(size);
+    const bytesRead = fs.readSync(input, data, 0, size, offset);
+    if (bytesRead <= 0) return new Uint8Array(0);
+    return data;
+  };
+
+  const exported = await serializer.process({
+    readFromCallback: true,
+    readCallback,
+    raw: false,
+  });
+
+  const splitPathToken = url.includes("/") ? "/" : "\\";
+  const fileName = url.split(splitPathToken).pop()?.split(".")[0];
+  const baseDir = "./resources/frags";
+  fs.writeFileSync(`${baseDir}/${fileName}.frag`, exported);
+}
+
+createFragsModelFromIfc("./resources/ifc/school_str.ifc");
