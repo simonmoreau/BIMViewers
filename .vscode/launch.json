@@ -3,6 +3,17 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "name": "nodemon",
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "program": "${workspaceFolder}/generators/web-ifc-viewer/src/index.ts",
+      "request": "launch",
+      "restart": true,
+      // "runtimeExecutable": "nodemon", /* ORIGINAL VALUE */
+      "runtimeExecutable": "${workspaceFolder}/generators/web-ifc-viewer/node_modules/nodemon/bin/nodemon.js",
+      "type": "node"
+    },
+    {
       "name": "Debug xBIM",
       "type": "clr",
       "request": "launch",
