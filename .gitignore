@@ -2,6 +2,7 @@
 
 # Compiled output
 /dist
+/generators/web-ifc-viewer/build
 /tmp
 /out-tsc
 /bazel-out
