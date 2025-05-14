@@ -33,8 +33,9 @@ export class WebIfcViewerComponent implements OnInit {
   private async loadIfc(components: OBC.Components, world: OBC.SimpleWorld<OBC.SimpleScene, OBC.SimpleCamera, OBC.SimpleRenderer>) {
     const fragments = new OBC.FragmentsManager(components);
     const fragFile = await fetch(
-      "https://thatopen.github.io/engine_components/resources/small.frag",
+      "small.frag",
     );
+
     const data = await fragFile.arrayBuffer();
     const buffer = new Uint8Array(data);
     const model = fragments.load(buffer);
